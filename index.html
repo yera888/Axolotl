@@ -50,7 +50,7 @@
     </nav>
 
     <div class="container hero">
-      <h1 class="h3 mb-1">Axolotl Morph Gallery</h1>
+      <h1 class="h3 mb-1">Axolotl Morphs </h1>
       <p class="mb-0 text-opacity-75">The incredible <em>Ambystoma mexicanum</em> morphs.</p>
     </div>
   </header>
@@ -76,7 +76,7 @@
         <div class="card h-100">
           <img src="albinowhite.png" class="card-img-top" alt="Albino white axolotl">
           <div class="card-body">
-            <h5 class="card-title">Albino (White)</h5>
+            <h5 class="card-title">White Albino</h5>
             <p class="card-text small text-muted">Very low melanin; light body and pinkish gills.</p>
             <a class="btn btn-primary btn-sm" href="details.html">More details</a>
           </div>
@@ -106,3 +106,58 @@
           </div>
         </div>
       </div>
+
+       <div class="col-12 col-sm-6 col-lg-4 morph" data-search="gfp green fluorescent protein glow uv">
+        <div class="card h-100">
+          <img src="gfp.png" class="card-img-top" alt="GFP axolotl (glows under UV)">
+          <div class="card-body">
+            <h5 class="card-title">GFP “Glow”</h5>
+            <p class="card-text small text-muted">Expresses green fluorescent protein; glows under blue/UV light.</p>
+            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="golden albino yellow xanthic">
+        <div class="card h-100">
+          <img src="goldenalbino.png" class="card-img-top" alt="Golden Albino axolotl">
+          <div class="card-body">
+            <h5 class="card-title">Golden Albino</h5>
+            <p class="card-text small text-muted">Albino with yellow/golden tones (xanthic).</p>
+            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="leucistic pale white dark eyes pink gills">
+        <div class="card h-100">
+          <img src="leucistic.png" class="card-img-top" alt="Leucistic axolotl (pale body, dark eyes)">
+          <div class="card-body">
+            <h5 class="card-title">Leucistic “Snowdrop”</h5>
+            <p class="card-text small text-muted">Pale body with dark eyes; not full albino.</p>
+            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+<script>
+    const input = document.getElementById('siteSearch');
+    const cards = document.querySelectorAll('.morph');
+    input.addEventListener('input', function () {
+      const q = this.value.toLowerCase().trim();
+      cards.forEach(c => {
+        const hay = (c.dataset.search + ' ' + c.innerText).toLowerCase();
+        c.style.display = hay.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
