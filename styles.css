@@ -1,0 +1,432 @@
+html {
+  font-size: 62.5%; /* This makes 1rem = 10px, simplifying calculations */
+}
+
+/* Font setup: use local fonts in /fonts if present */
+@font-face {
+  font-family: "syn_novabold";
+  src: url("fonts/synnova-bold-webfont.woff2") format("woff2"),
+       url("fonts/synnova-bold-webfont.woff") format("woff");
+  font-weight: 700; /* Changed from 'bold' to 700 for consistency */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "syn_novaregular";
+  src: url("fonts/synnova-regular-webfont.woff2") format("woff2"),
+       url("fonts/synnova-regular-webfont.woff") format("woff");
+  font-weight: 400; /* Changed from 'normal' to 400 for consistency */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Remove root variables as we're switching to a light theme with specific colors */
+/* :root { ... } */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  background: #fff; /* Light background */
+  color: #111; /* Dark text */
+  font-family: "syn_novaregular", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.45;
+  font-size: 1.6rem; /* Base font size for body */
+}
+
+a {
+  color: #111; /* Dark link color */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  max-width: 98rem; /* Using rem units */
+  margin: 0 auto;
+  padding: 0 1.6rem; /* Using rem units */
+}
+
+/* --- Navigation Styles (New) --- */
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; /* Changed from fixed to sticky to allow scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 9.9rem; /* Using rem units */
+  background: #fff; /* Light background for nav */
+  border-bottom: 1px solid #eee; /* Light border */
+  z-index: 1000;
+  padding-inline: 2rem; /* Using rem units */
+}
+
+.navContainer a {
+  color: #111; /* Dark link color */
+  font-family: "syn_novaregular", system-ui, sans-serif;
+}
+
+.menu-burger > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu-burger input {
+  height: 3.2rem;
+  margin: 0;
+  opacity: 0;
+  width: 3.2rem;
+  z-index: 5;
+}
+
+.menu-burger svg {
+  height: 3.2rem;
+  width: 3.2rem;
+  z-index: 4;
+}
+
+ul.menu-burger__item-list {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 28rem;
+  height: 100vh;
+  background: #fff;
+  color: #111;
+  list-style: none;
+  margin: 0;
+  padding: 2.4rem 2rem; /* Adjusted padding */
+  transform: translateX(-110%);
+  transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+  z-index: 9999;
+}
+
+#nav-toggle:checked ~ .menu-burger__item-list {
+  transform: translateX(0);
+}
+
+.menu-burger__item-list a {
+  color: #111;
+  font-size: 1.8rem;
+  text-decoration: none;
+  display: block;
+  padding: .6rem 0;
+}
+.menu-burger__item-list li + li {
+  margin-top: .6rem;
+}
+.menu-burger__item-list a:hover {
+  background: rgba(0,0,0,.05);
+}
+
+.menu-burger input:checked ~ svg line {
+  stroke: #000;
+}
+
+.menu-burger svg line:nth-of-type(1) {
+  stroke: #000;
+  transform-origin: center 0.6rem;
+}
+
+.menu-burger svg line:nth-of-type(2) {
+  stroke: #000;
+  transform-origin: center 1.2rem;
+}
+
+.menu-burger svg line:nth-of-type(3) {
+  stroke: #000;
+  transform-origin: center 1.8rem;
+}
+
+.menu-burger svg line {
+  transition-duration: 0.5s;
+  transition-property: stroke, opacity, transform;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(2) {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(1) {
+  transform: translate(0, 0.6rem) rotate(45deg);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(3) {
+  transform: translate(0, -0.6rem) rotate(-45deg);
+}
+
+.menu-burger {
+  position: relative;
+  width: 3.2rem;
+  height: 3.2rem;
+  /* Hide burger menu on larger screens */
+  display: none;
+}
+
+.navBoxOne {
+  height: 9.9rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.navBoxOne p {
+  padding-left: 0; /* Remove left padding, let .navContainer handle it */
+  color: #111;
+  font-family: "syn_novabold", system-ui, sans-serif;
+  font-size: 3rem; /* Adjusted for brand name, clamp might be better */
+  z-index: 1;
+  margin: 0; /* Remove default paragraph margin */
+}
+
+.navBoxTwo {
+  height: 9.9rem;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.navBoxTwo ul {
+  display: flex; /* Changed from inline to flex for horizontal menu */
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Remove bullet points */
+}
+
+.navBoxTwo ul li {
+  display: block; /* Changed from inline-block */
+}
+
+.navBoxTwo ul li:hover {
+  background: rgba(0, 0, 0, 0.05); /* Light hover effect */
+}
+
+.navBoxTwo ul li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.8rem; /* Adjusted font size */
+  padding: 1.5rem; /* Using rem units */
+  display: inline-block;
+}
+
+/* Dropdown styles for navBoxTwo (if you want a dropdown) */
+.navBoxTwo ul li {
+  position: relative;
+}
+.navBoxTwo ul li ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 20rem;
+  display: none; /* Hidden by default */
+  flex-direction: column; /* Stack dropdown items vertically */
+  background: #fff; /* Dropdown background */
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navBoxTwo ul li:hover ul {
+  display: flex; /* Show dropdown on hover */
+}
+
+.navBoxTwo ul li ul li {
+  background: #fff; /* Dropdown item background */
+  display: block;
+}
+
+.navBoxTwo ul li ul li a {
+  display: block; /* Ensure full clickable area */
+  padding: 1rem 1.5rem;
+}
+
+.navBoxTwo ul li ul li:hover {
+  background: rgba(0,0,0,.05);
+}
+
+/* --- End Navigation Styles --- */
+
+/* Sections */
+.page {
+  padding: 2.8rem 0; /* Using rem units */
+}
+.page h1 {
+  margin: 0 0 0.8rem; /* Using rem units */
+  font-size: clamp(2.2rem, 3vw, 3.4rem); /* Using rem units */
+  font-family: "syn_novabold", system-ui, sans-serif;
+}
+.page p.lede {
+  color: #444; /* Darker soft color */
+  max-width: 70ch;
+  font-size: 1.8rem; /* Adjusted font size */
+}
+
+/* Card grid for gallery */
+.toolbar {
+  display: flex;
+  gap: 0.8rem; /* Using rem units */
+  margin: 1.4rem 0 1.8rem; /* Using rem units */
+}
+.input {
+  flex: 1;
+  padding: 1rem 1.2rem; /* Using rem units */
+  border-radius: 1rem; /* Using rem units */
+  border: 1px solid #ccc; /* Lighter border */
+  background: #f8f8f8; /* Lighter background */
+  color: #111;
+  font-size: 1.6rem;
+}
+.button {
+  padding: 1rem 1.4rem; /* Using rem units */
+  border-radius: 1rem; /* Using rem units */
+  border: 0;
+  cursor: pointer;
+  background: #111; /* Dark button background */
+  color: #fff; /* White text */
+  font-weight: 700;
+  font-family: "syn_novabold", system-ui, sans-serif;
+  font-size: 1.6rem;
+}
+.button:hover { opacity: .92; }
+
+.grid {
+  display: grid;
+  gap: 1.4rem; /* Using rem units */
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); /* Using rem units */
+}
+.card {
+  background: #fff; /* Light card background */
+  border: 1px solid #eee; /* Light border */
+  border-radius: 1.4rem; /* Using rem units */
+  overflow: hidden;
+  transition: transform .12s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+.card:hover {
+  transform: translateY(-0.2rem); /* Using rem units */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100%;
+  height: 16rem; /* Using rem units */
+  object-fit: cover;
+  display: block;
+}
+.card .pad {
+  padding: 1rem 1.2rem; /* Using rem units */
+}
+.card h3 {
+  margin: 0.6rem 0 0.4rem; /* Using rem units */
+  font-size: 2rem; /* Using rem units */
+  font-family: "syn_novabold", system-ui, sans-serif;
+}
+.card p {
+  margin: 0;
+  color: #444; /* Darker soft color */
+  font-size: 1.5rem; /* Using rem units */
+}
+
+/* Details layout */
+.panel {
+  background: #fff; /* Light panel background */
+  border: 1px solid #eee; /* Light border */
+  border-radius: 1.4rem; /* Using rem units */
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 1.6rem; /* Using rem units */
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.panel .pad {
+  padding: 1.4rem; /* Using rem units */
+}
+.panel h2 {
+  font-family: "syn_novabold", system-ui, sans-serif;
+  font-size: 2.2rem;
+}
+.list {
+  margin: 1rem 0 0; /* Using rem units */
+  padding-left: 1.6rem; /* Using rem units */
+  color: #444; /* Darker soft color */
+  font-size: 1.6rem;
+}
+
+/* Form */
+.form {
+  max-width: 70rem; /* Using rem units */
+  display: grid;
+  gap: 1.2rem; /* Using rem units */
+}
+.field {
+  display: grid;
+  gap: 0.6rem; /* Using rem units */
+}
+label {
+  color: #444; /* Darker soft color */
+  font-size: 1.5rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 1rem 1.2rem; /* Using rem units */
+  border-radius: 1rem; /* Using rem units */
+  border: 1px solid #ccc; /* Lighter border */
+  background: #f8f8f8; /* Lighter background */
+  color: #111;
+  font-size: 1.6rem;
+}
+textarea {
+  min-height: 11rem; /* Using rem units */
+  resize: vertical;
+}
+
+footer {
+  border-top: 1px solid #eee; /* Lighter border */
+  margin-top: 2.8rem; /* Using rem units */
+  color: #444; /* Darker soft color */
+  padding: 1.6rem 0; /* Using rem units */
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+@media (max-width: 86rem) { /* Using rem units */
+  .panel {
+    grid-template-columns: 1fr;
+  }
+  /* Show burger menu, hide desktop nav links */
+  .menu-burger {
+    display: block;
+  }
+  .navBoxTwo {
+    display: none;
+  }
+  .navBoxOne p {
+    padding-left: 0; /* Adjust for mobile */
+    text-align: center; /* Center brand name */
+    flex-grow: 1; /* Allow brand to take available space */
+  }
+  .navContainer {
+    padding-inline: 1.6rem;
+  }
+}
+
+/* Optional placeholder if an image is missing */
+img.placeholder {
+  background: repeating-linear-gradient(45deg, #eee, #eee 1rem, #ddd 1rem, #ddd 2rem); /* Lightened placeholder */
+  min-height: 16rem; /* Using rem units */
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About this site</title>
+  <!-- Removed Google Fonts link as we are using local fonts now -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="navContainer">
+  <div class="menu-burger">
+    <input id="nav-toggle" type="checkbox" />
+    <label for="nav-toggle" aria-label="Open menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </label>
+    <ul class="menu-burger__item-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="new-animal-form.html">Add New</a></li>
+    </ul>
+  </div>
+
+  <div class="navBoxOne">
+    <p>Axolotl Gallery</p>
+  </div>
+  <div class="navBoxTwo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a aria-current="page" href="about.html">About</a></li>
+      <li><a href="new-animal-form.html">Add New</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrapper page">
+  <h1>About this site</h1>
+  <p class="lede">This is a simple, educational site about axolotls. It aims to look like a small scientific page: calm colors, a clear serif font, and clean layouts. Every page uses the same top navigation.</p>
+
+  <section class="panel" style="margin-top:1.6rem;">
+    <img src="assets/img/wild.png" alt="Axolotl in tank">
+    <div class="pad">
+      <h2>Why axolotls?</h2>
+      <p>Axolotls are salamanders that keep their juvenile traits into adulthood. They can regrow limbs and parts of organs, which makes them interesting to biologists. They prefer cool, clean water and gentle flow. Good care keeps them healthy and active.</p>
+      <h2 style="margin-top:1.4rem;">What this site includes</h2>
+      <ul class="list">
+        <li>Home page with a search box and several morphs</li>
+        <li>One shared details page</li>
+        <li>This about page with an image and text</li>
+        <li>A simple form for adding a new entry (for later API work)</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrapper">© 2025 Axolotl Gallery</div>
+</footer>
+</body>
+</html>

@@ -3,182 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Axilotl Aquarium — Axolotl Morphs</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-  /* Ocean look for the header background */
-  .hero-bg {
-    background:
-      radial-gradient(1200px 600px at 20% -10%, rgba(80,196,220,.25), transparent 70%),
-      radial-gradient(900px 500px at 80% 0%, rgba(42,157,180,.20), transparent 70%),
-      linear-gradient(160deg, #031d2d 0%, #053b4a 45%, #0a5662 100%);
-    color: #e8f6fb;
-  }
-
-  /* keep your existing spacing */
-  .hero { padding: 3rem 0; }
-
-  /* image sizing for cards */
-  .card-img-top { height: 180px; object-fit: cover; }
-
-  /* ocean-tinted primary buttons */
-  .btn-primary { background-color: #0a8ea0; border-color: #0a8ea0; }
-  .btn-primary:hover, .btn-primary:focus { background-color: #087987; border-color: #087987; }
-
-  /* subtle polish (still beginner-friendly) */
-  .card { border: none; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.08); }
-  .card-title { color: #0b5e6e; }
-
-  /* navbar bottom border = sea foam */
-  .navbar.border-bottom { border-bottom-color: rgba(160, 220, 230, .35) !important; }
-</style>
+  <title>Axolotl Gallery</title>
+  <!-- Removed Google Fonts link as we are using local fonts now -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header class="navContainer">
+  <div class="menu-burger">
+    <input id="nav-toggle" type="checkbox" />
+    <label for="nav-toggle" aria-label="Open menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </label>
+    <ul class="menu-burger__item-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="new-animal-form.html">Add New</a></li>
+    </ul>
+  </div>
 
-      <header class="hero-bg">
-
-        <nav class="navbar navbar-expand-lg bg-transparent border-bottom border-body" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.html">Axilotl Aquarium</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="details.html">Details</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="new-animal-form.html">Add Animal</a></li>
-          </ul>
-
-
-          <form class="d-flex" role="search" onsubmit="event.preventDefault();">
-            <input id="siteSearch" class="form-control me-2" type="search" placeholder="Search morphs…" aria-label="Search">
-            <button class="btn btn-outline-light" type="button" onclick="document.getElementById('siteSearch').value='';document.getElementById('siteSearch').dispatchEvent(new Event('input'));">
-              Clear
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container hero">
-      <h1 class="h3 mb-1">Axolotl Morphs </h1>
-      <p class="mb-0 text-opacity-75">The incredible <em>Ambystoma mexicanum</em> morphs.</p>
-    </div>
-  </header>
-
+  <div class="navBoxOne">
+    <p>Axolotl Gallery</p>
+  </div>
+  <div class="navBoxTwo">
+    <ul>
+      <li><a aria-current="page" href="index.html">Home</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="new-animal-form.html">Add New</a></li>
+    </ul>
+  </div>
 </header>
 
-<div class="ocean-strip"></div>
+<main class="wrapper page">
+  <h1>Axolotl Morphs</h1>
+  <p class="lede">This page shows several common axolotl morphs. Use the search box to filter the list by name or keywords.</p>
 
-  <main class="container my-4">
-    <div id="grid" class="row g-3">
+  <div class="toolbar">
+    <input id="search" class="input" type="search" placeholder="Search (e.g., leucistic, wild, melanoid, golden, gfp, firefly)">
+    <button class="button" onclick="filterCards()">Search</button>
+  </div>
 
-
-        <div class="col-12 col-sm-6 col-lg-4 morph" data-search="wild type natural mottled ambystoma mexicanum">
-        <div class="card h-100">
-          <img src="wild.png" class="card-img-top" alt="Wild type axolotl (natural mottling)">
-          <div class="card-body">
-            <h5 class="card-title">Wild Type</h5>
-            <p class="card-text small text-muted">Classic natural coloration with dark mottling.</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+  <section id="cards" class="grid">
+    <a class="card" href="details.html" data-name="Leucistic" data-tags="pale white pink gills dark eyes beginner">
+      <img src="assets/img/leucistic.png" alt="Leucistic axolotl">
+      <div class="pad">
+        <h3>Leucistic</h3>
+        <p>Pale body with dark eyes and often pink gills.</p>
       </div>
+    </a>
 
-
-      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="albino white pale pink eyes low melanin">
-        <div class="card h-100">
-          <img src="albinowhite.png" class="card-img-top" alt="Albino white axolotl">
-          <div class="card-body">
-            <h5 class="card-title">White Albino</h5>
-            <p class="card-text small text-muted">Very low melanin; light body and pinkish gills.</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+    <a class="card" href="details.html" data-name="Wild-type" data-tags="wild green brown speckled natural hardy classic">
+      <img src="assets/img/wild.png" alt="Wild-type axolotl">
+      <div class="pad">
+        <h3>Wild-type</h3>
+        <p>Speckled, dark/olive colors similar to natural look.</p>
       </div>
+    </a>
 
-
-      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="firefly high contrast chimera pattern">
-        <div class="card h-100">
-          <img src="firefly.png" class="card-img-top" alt="Firefly axolotl">
-          <div class="card-body">
-            <h5 class="card-title">Firefly</h5>
-            <p class="card-text small text-muted">High-contrast look from mixed tissues.</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+    <a class="card" href="details.html" data-name="Melanoid" data-tags="melanoid dark matte uniform reduced iridophores">
+      <img src="assets/img/melanoid.png" alt="Melanoid axolotl">
+      <div class="pad">
+        <h3>Melanoid</h3>
+        <p>Deep, even coloration with a matte finish.</p>
       </div>
+    </a>
 
-
-      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="melanoid black matte fewer iridophores">
-        <div class="card h-100">
-          <img src="melanoid.png" class="card-img-top" alt="Melanoid axolotl (very dark)">
-          <div class="card-body">
-            <h5 class="card-title">Melanoid “Onyx”</h5>
-            <p class="card-text small text-muted">Very dark, matte look from fewer shiny cells.</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+    <a class="card" href="details.html" data-name="Golden Albino" data-tags="golden albino light eyes gold shimmering">
+      <img src="assets/img/goldenalbino.png" alt="Golden albino axolotl">
+      <div class="pad">
+        <h3>Golden Albino</h3>
+        <p>Warm golden tone; lacks dark pigment.</p>
       </div>
+    </a>
 
-       <div class="col-12 col-sm-6 col-lg-4 morph" data-search="gfp green fluorescent protein glow uv">
-        <div class="card h-100">
-          <img src="gfp.png" class="card-img-top" alt="GFP axolotl (glows under UV)">
-          <div class="card-body">
-            <h5 class="card-title">GFP “Glow”</h5>
-            <p class="card-text small text-muted">Expresses green fluorescent protein; glows under blue/UV light.</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+    <a class="card" href="details.html" data-name="Albino White" data-tags="albino white light eyes bright gills sensitive light">
+      <img src="assets/img/albinowhite.png" alt="Albino white axolotl">
+      <div class="pad">
+        <h3>Albino White</h3>
+        <p>White body and light eyes; sensitive to strong light.</p>
       </div>
+    </a>
 
-
-      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="golden albino yellow xanthic">
-        <div class="card h-100">
-          <img src="goldenalbino.png" class="card-img-top" alt="Golden Albino axolotl">
-          <div class="card-body">
-            <h5 class="card-title">Golden Albino</h5>
-            <p class="card-text small text-muted">Albino with yellow/golden tones (xanthic).</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+    <a class="card" href="details.html" data-name="GFP" data-tags="gfp green fluorescent protein uv glow">
+      <img src="assets/img/gfp.png" alt="GFP axolotl">
+      <div class="pad">
+        <h3>GFP</h3>
+        <p>Glows under UV due to green fluorescent protein.</p>
       </div>
+    </a>
 
-
-      <div class="col-12 col-sm-6 col-lg-4 morph" data-search="leucistic pale white dark eyes pink gills">
-        <div class="card h-100">
-          <img src="leucistic.png" class="card-img-top" alt="Leucistic axolotl (pale body, dark eyes)">
-          <div class="card-body">
-            <h5 class="card-title">Leucistic “Snowdrop”</h5>
-            <p class="card-text small text-muted">Pale body with dark eyes; not full albino.</p>
-            <a class="btn btn-primary btn-sm" href="details.html">More details</a>
-          </div>
-        </div>
+    <a class="card" href="details.html" data-name="Firefly" data-tags="firefly chimera gfp tail unique pattern rare">
+      <img src="assets/img/firefly.png" alt="Firefly axolotl">
+      <div class="pad">
+        <h3>Firefly</h3>
+        <p>Rare look; often shows GFP in the tail region.</p>
       </div>
+    </a>
+  </section>
+</main>
 
-    </div>
-  </main>
-
+<footer>
+  <div class="wrapper">© 2025 Axolotl Gallery</div>
+</footer>
 
 <script>
-    const input = document.getElementById('siteSearch');
-    const cards = document.querySelectorAll('.morph');
-    input.addEventListener('input', function () {
-      const q = this.value.toLowerCase().trim();
-      cards.forEach(c => {
-        const hay = (c.dataset.search + ' ' + c.innerText).toLowerCase();
-        c.style.display = hay.includes(q) ? '' : 'none';
-      });
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+function filterCards(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const list = document.querySelectorAll('#cards .card');
+  list.forEach(card => {
+    const name = (card.getAttribute('data-name')||'').toLowerCase();
+    const tags = (card.getAttribute('data-tags')||'').toLowerCase();
+    const has = (name + ' ' + tags).includes(q);
+    card.style.display = has ? '' : 'none';
+  });
+}
+document.getElementById('search').addEventListener('input', filterCards);
+</script>
 </body>
 </html>

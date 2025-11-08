@@ -3,36 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Axilotl Aquarium — Morph Details (Leucistic)</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .hero-bg { background: linear-gradient(135deg, #0b1623, #0f2e3a 60%, #0a3d40); color:#e8f6fb; }
-    .hero { padding: 3rem 0; }
-    .feature-img { max-height: 280px; object-fit: cover; }
-  </style>
+  <title>Axolotl Details</title>
+  <!-- Removed Google Fonts link as we are using local fonts now -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header class="navContainer">
+  <div class="menu-burger">
+    <input id="nav-toggle" type="checkbox" />
+    <label for="nav-toggle" aria-label="Open menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </label>
+    <ul class="menu-burger__item-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="new-animal-form.html">Add New</a></li>
+    </ul>
+  </div>
 
-  <header class="hero-bg">
-    <nav class="navbar navbar-expand-lg bg-transparent border-bottom border-body" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.html">Axilotl Aquarium</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="navBoxOne">
+    <p>Axolotl Gallery</p>
+  </div>
+  <div class="navBoxTwo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a aria-current="page" href="details.html">Details</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="new-animal-form.html">Add New</a></li>
+    </ul>
+  </div>
+</header>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="details.html">Details</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="new-animal-form.html">Add Animal</a></li>
-          </ul>
-          <form class="d-flex" role="search" onsubmit="event.preventDefault();">
-            <input class="form-control" type="search" placeholder="Search (home page)" aria-label="Search"
-                   onfocus="window.location='index.html'">
-          </form>
-        </div>
-      </div>
-    </nav>
+<main class="wrapper page">
+  <h1>Axolotl — details</h1>
+  <p class="lede">This page gives more background about axolotls in general. All cards on the home page can link here.</p>
+
+  <section class="panel" style="margin-top:1.6rem;">
+    <img src="assets/img/leucistic.png" alt="Axolotl close-up">
+    <div class="pad">
+      <h2>Quick facts</h2>
+      <ul class="list">
+        <li>Species: <strong>Ambystoma mexicanum</strong></li>
+        <li>Known for limb and organ regeneration</li>
+        <li>Native to the Xochimilco canal system, Mexico City</li>
+        <li>Cool water: about 16–18°C (60–64°F)</li>
+      </ul>
+
+      <h2 style="margin-top:1.4rem;">Care basics</h2>
+      <ul class="list">
+        <li>Clean water, gentle flow; avoid strong currents</li>
+        <li>Fine sand or bare bottom; avoid gravel</li>
+        <li>Protein-based diet: worms, pellets, bloodworms</li>
+        <li>Provide hides and low light areas</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="lede" style="margin-top:1.4rem;">You can replace the photo and text above with a specific morph if your instructor asks for one.</p>
+</main>
+
+<footer>
+  <div class="wrapper">© 2025 Axolotl Gallery</div>
+</footer>
+</body>
+</html>
