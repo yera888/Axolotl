@@ -19,16 +19,9 @@
       <div class="menu-burger">
         <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
         <label for="nav-toggle" aria-label="Open menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               stroke-width="2" stroke="currentColor" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" />
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="12" x2="20" y2="12" />
@@ -72,29 +65,19 @@
 
     <main class="wrapper page">
       <section class="panel">
-        <img
-          id="morphImage"
-          src="assets/img/wild.jpg"
-          alt="Axolotl morph image"
-        />
+        <img id="morphImage" src="assets/img/wild.jpg" alt="Axolotl morph image" />
         <div class="pad">
           <h2>How this morph arises</h2>
           <p id="morphOrigin">—</p>
 
           <h2 style="margin-top: 1.4rem">Typical size</h2>
-          <ul class="list" id="morphSize">
-            <li>—</li>
-          </ul>
+          <ul class="list" id="morphSize"><li>—</li></ul>
 
           <h2 style="margin-top: 1.4rem">Phenotype & what makes it unique</h2>
-          <ul class="list" id="morphTraits">
-            <li>—</li>
-          </ul>
+          <ul class="list" id="morphTraits"><li>—</li></ul>
 
           <h2 style="margin-top: 1.4rem">Care notes</h2>
-          <ul class="list" id="morphCare">
-            <li>—</li>
-          </ul>
+          <ul class="list" id="morphCare"><li>—</li></ul>
         </div>
       </section>
     </main>
@@ -108,120 +91,66 @@
         Leucistic: {
           img: "assets/img/leucistic.jpg",
           intro:
-            "Reduced melanophore distribution in the skin called leucism yields a pale body while ocular melanin is retained. Dark eyes and often pink external gills. Not true albino.",
+            "Reduced melanophore distribution (leucism) yields a pale body while ocular melanin is retained. Dark eyes and often pink external gills. Not true albino.",
           origin:
             "Leucism reduces pigment cells in the skin while leaving eye pigmentation.",
-          size: [
-            "Adult length: typically 23–30 cm (9–12 in)",
-            "Occasional larger individuals up to ~30+ cm",
-          ],
-          traits: [
-            "Pale body with dark eyes",
-            "Pink external gills common",
-            "Visible capillaries in thin skin",
-          ],
+          size: ["Adult length: typically 23–30 cm (9–12 in)"],
+          traits: ["Pale body with dark eyes", "Pink external gills", "Fine skin with visible capillaries"],
           care: ["Cool, clean water; gentle flow", "Fine sand or bare bottom"],
         },
         "Wild Type": {
           img: "assets/img/wild.jpg",
           intro:
-            "A mosaic of melanophores xanthophores and iridophores produces cryptic olive to brown speckling with metallic flecks from guanine platelets. This approximates natural lake coloration.",
+            "Melanophores, xanthophores, and iridophores produce cryptic olive to brown speckling with metallic flecks from guanine platelets — close to natural coloration.",
           origin: "Wild mix of melanophores, xanthophores, and iridophores.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: [
-            "Olive to brown with speckling",
-            "Gold flecks may be visible",
-            "Dark eyes",
-          ],
-          care: [
-            "Provide hides & low light",
-            "Standard water quality",
-            "Protein-rich diet",
-          ],
+          traits: ["Olive to brown with speckling", "Gold flecks may be visible", "Dark eyes"],
+          care: ["Provide hides & low light", "Standard water quality", "Protein-rich diet"],
         },
         Melanoid: {
           img: "assets/img/melanoid.jpg",
           intro:
-            "A recessive melanoid genotype diminishes iridophores and apparent xanthophore reflectance. The result is uniform matte dark pigmentation with minimal gold flecking. Eyes remain dark.",
-          origin:
-            "Melanoid gene reduces iridophores for a uniform, dark appearance.",
+            "A recessive melanoid genotype diminishes iridophores and apparent xanthophore reflectance. The result is uniform matte dark pigmentation.",
+          origin: "Melanoid gene reduces iridophores for a uniform, dark appearance.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: [
-            "Uniform, very dark body",
-            "Matte finish",
-            "Few to no metallic flecks",
-          ],
-          care: [
-            "Standard parameters",
-            "Low to moderate light",
-            "Good water quality & hides",
-          ],
+          traits: ["Uniform dark body", "Matte finish", "Few or no metallic flecks"],
+          care: ["Standard parameters", "Low to moderate light", "Good water quality & hides"],
         },
         "Golden Albino": {
           img: "assets/img/goldenalbino.jpg",
           intro:
-            "Amelanism removes melanin while xanthophores and some iridophores remain. The integument appears yellow to gold and the eyes are light. Individuals are often more photosensitive than pigmented morphs.",
-          origin:
-            "Albino genetics reduce melanin; xanthophores give golden hue.",
+            "Amelanism removes melanin while xanthophores and some iridophores remain, giving yellow to golden integument; eyes are light and individuals are often more photosensitive.",
+          origin: "Albino genetics reduce melanin; xanthophores give the golden hue.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: [
-            "Golden/yellow body",
-            "Light eyes",
-            "Subtle iridescence possible",
-          ],
-          care: [
-            "Prefer dim light",
-            "Standard temperature & quality",
-            "Fine sand or bare bottom",
-          ],
+          traits: ["Golden/yellow body", "Light eyes", "Subtle iridescence possible"],
+          care: ["Prefer dim light", "Standard temperature & quality", "Fine sand or bare bottom"],
         },
         "Albino White": {
           img: "assets/img/albinowhite.jpg",
           intro:
-            "Amelanism with low xanthophore density produces a near white body and pale or pink eyes. Light sensitivity is high and speckling or metallic sheen is minimal.",
-          origin: "Albino genetics remove dark melanin.",
+            "Amelanism with low xanthophore density produces a near-white body and pale or pink eyes. Light sensitivity is high; speckling is minimal.",
+          origin: "Albino genetics remove melanin.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
           traits: ["White body", "Very light eyes", "Pinkish gills"],
-          care: [
-            "Avoid strong lighting",
-            "Standard conditions",
-            "Shaded hides",
-          ],
+          care: ["Avoid strong lighting", "Standard conditions", "Shaded hides"],
         },
         GFP: {
           img: "assets/img/gfp.jpg",
           intro:
-            "Transgenic expression of Aequorea victoria green fluorescent protein causes tissues to fluoresce bright green under blue or UV excitation. Baseline color depends on the underlying morph.",
-          origin: "Transgenic line expressing green fluorescent protein.",
+            "Transgenic expression of Aequorea victoria green fluorescent protein causes tissues to fluoresce bright green under blue/UV light. Baseline color depends on the underlying morph.",
+          origin: "Transgenic line expressing GFP.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: [
-            "Daylight look depends on base morph",
-            "Green glow under UV/blue",
-            "Can combine with other morphs",
-          ],
-          care: [
-            "Standard care",
-            "Avoid long bright UV exposure",
-            "Provide hides & low light",
-          ],
+          traits: ["Daylight look depends on base morph", "Green glow under UV/blue", "Can combine with other morphs"],
+          care: ["Standard care", "Avoid prolonged bright UV exposure", "Provide hides & low light"],
         },
         Firefly: {
           img: "assets/img/firefly.jpg",
           intro:
-            "Chimeric or tissue graft lineage concentrates GFP in the tail or a body segment. This creates sharply regional fluorescence and a striking mosaic pattern. This morph is rare and visually distinctive.",
-          origin:
-            "Specialized techniques yield striking tail fluorescence/chimera-like split.",
+            "Chimeric or graft lineage concentrates GFP in the tail or a body region, creating sharply regional fluorescence and a striking mosaic pattern.",
+          origin: "Specialized methods yield regional fluorescence/chimera-like split.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: [
-            "High-contrast look",
-            "Asymmetric/split possible",
-            "Rare and distinctive",
-          ],
-          care: [
-            "Same as other morphs",
-            "Avoid excessive UV/blue light",
-            "Standard clean, cool water",
-          ],
+          traits: ["High-contrast look", "Asymmetric/split possible", "Rare and distinctive"],
+          care: ["Same as other morphs", "Avoid excessive UV/blue light", "Clean, cool water"],
         },
       };
 
@@ -247,5 +176,4 @@
       fillList("morphCare", data.care);
     </script>
   </body>
-
 </html>
