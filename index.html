@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Axolotl Morphs & Care</title>
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,16 +19,9 @@
       <div class="menu-burger">
         <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
         <label for="nav-toggle" aria-label="Open menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               stroke-width="2" stroke="currentColor" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" />
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="12" x2="20" y2="12" />
@@ -67,20 +59,13 @@
     <section
       class="hero hero--image"
       style="
-        background-image: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.25)
-          ),
-          url('assets/img/hero-morphs.jpg');
+        background-image: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.25)),
+                          url('assets/img/hero-morphs.jpg');
       "
     >
       <div class="inner">
-        <h1>In an Axolotl World take A Look Of All The Axolotl Morphs</h1>
-        <p>
-          Browse through the different kinds of morphs of <em>the spectacular Axolotls.</em>
-
-        </p
+        <h1>Explore Axolotl Morphs</h1>
+        <p>Browse the different morphs of <em>Ambystoma mexicanum</em>.</p>
       </div>
     </section>
 
@@ -90,18 +75,16 @@
           id="search"
           class="input"
           type="search"
-          placeholder="Search (leucistic, wild, melanoid, golden, gfGreen Fluorescent Proteinp, firefly)…"
+          placeholder="Search (leucistic, wild, melanoid, golden, GFP, firefly)…"
+          aria-label="Search morphs"
         />
         <button class="button" onclick="filterCards()">Search</button>
       </div>
 
       <section id="cards" class="grid" aria-label="Morph gallery">
-        <a
-          class="card"
-          href="details.html?morph=Leucistic"
-          data-name="Leucistic"
-          data-tags="pale white pink gills dark eyes beginner"
-        >
+        <a class="card" href="details.html?morph=Leucistic"
+           data-name="Leucistic"
+           data-tags="pale white pink gills dark eyes beginner">
           <figure>
             <img src="assets/img/leucistic.jpg" alt="Leucistic axolotl" />
           </figure>
@@ -111,14 +94,11 @@
           </div>
         </a>
 
-        <a
-          class="card"
-          href="details.html?morph=Wild Type"
-          data-name="Wild Type"
-          data-tags="wild green brown speckled natural hardy classic"
-        >
+        <a class="card" href="details.html?morph=Wild%20Type"
+           data-name="Wild Type"
+           data-tags="wild green brown speckled natural hardy classic">
           <figure>
-            <img src="assets/img/wild.jpg" alt="Wild Type Axolotl" />
+            <img src="assets/img/wild.jpg" alt="Wild Type axolotl" />
           </figure>
           <div class="cap">
             <h3>Wild Type</h3>
@@ -126,12 +106,9 @@
           </div>
         </a>
 
-        <a
-          class="card"
-          href="details.html?morph=Melanoid"
-          data-name="Melanoid"
-          data-tags="melanoid dark matte uniform reduced iridophores"
-        >
+        <a class="card" href="details.html?morph=Melanoid"
+           data-name="Melanoid"
+           data-tags="melanoid dark matte uniform reduced iridophores">
           <figure>
             <img src="assets/img/melanoid.jpg" alt="Melanoid axolotl" />
           </figure>
@@ -141,17 +118,11 @@
           </div>
         </a>
 
-        <a
-          class="card"
-          href="details.html?morph=Golden%20Albino"
-          data-name="Golden Albino"
-          data-tags="golden albino light eyes gold shimmering"
-        >
+        <a class="card" href="details.html?morph=Golden%20Albino"
+           data-name="Golden Albino"
+           data-tags="golden albino light eyes gold shimmering">
           <figure>
-            <img
-              src="assets/img/goldenalbino.jpg"
-              alt="Golden albino axolotl"
-            />
+            <img src="assets/img/goldenalbino.jpg" alt="Golden albino axolotl" />
           </figure>
           <div class="cap">
             <h3>Golden Albino</h3>
@@ -159,12 +130,9 @@
           </div>
         </a>
 
-        <a
-          class="card"
-          href="details.html?morph=Albino%20White"
-          data-name="Albino White"
-          data-tags="albino white light eyes bright gills sensitive light"
-        >
+        <a class="card" href="details.html?morph=Albino%20White"
+           data-name="Albino White"
+           data-tags="albino white light eyes bright gills sensitive light">
           <figure>
             <img src="assets/img/albinowhite.jpg" alt="White albino axolotl" />
           </figure>
@@ -174,25 +142,21 @@
           </div>
         </a>
 
-        <a
-          class="card"
-          href="details.html?morph=GFP"
-          data-name="Green Fluorescent Protein"
-          data-tags="gfp green fluorescent protein uv glow"
-        >
-          <figure><img src="assets/img/gfp.jpg" alt="Green Fluorescent Protein axolotl" /></figure>
+        <a class="card" href="details.html?morph=GFP"
+           data-name="GFP"
+           data-tags="green fluorescent protein uv glow transgenic">
+          <figure>
+            <img src="assets/img/gfp.jpg" alt="GFP axolotl" />
+          </figure>
           <div class="cap">
             <h3>Green Fluorescent Protein</h3>
             <p class="meta"></p>
           </div>
         </a>
 
-        <a
-          class="card"
-          href="details.html?morph=Firefly"
-          data-name="Firefly"
-          data-tags="firefly chimera gfp tail unique rare"
-        >
+        <a class="card" href="details.html?morph=Firefly"
+           data-name="Firefly"
+           data-tags="firefly chimera gfp tail unique rare">
           <figure>
             <img src="assets/img/firefly.jpg" alt="Firefly axolotl" />
           </figure>
@@ -203,7 +167,7 @@
         </a>
       </section>
 
-      <!-- Quick facts band -->
+      <!-- Quick facts -->
       <section class="panel" style="margin-top: 2.8rem">
         <img src="assets/img/baby.jpg" alt="Baby axolotl close-up" />
         <div class="pad">
@@ -212,7 +176,7 @@
             <li>Species: <strong>Ambystoma mexicanum</strong></li>
             <li>Exceptional tissue & limb regeneration</li>
             <li>Native to Xochimilco (Mexico City)</li>
-            <li>Preferred water: 16–18°C (60–64°F), gentle flow</li>
+            <li>Preferred water: 16–18&nbsp;°C (60–64&nbsp;°F), gentle flow</li>
           </ul>
         </div>
       </section>
@@ -234,5 +198,4 @@
       document.getElementById("search").addEventListener("input", filterCards);
     </script>
   </body>
-
 </html>
