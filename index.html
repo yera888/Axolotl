@@ -1,249 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Morph Details</title>
+    <title>Axolotl Morphs & Care</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700&display=swap"
-        rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
     />
+
     <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+  </head>
+  <body class="outline-all">
     <header class="navContainer">
-        <div class="menu-burger">
-            <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
-            <label for="nav-toggle" aria-label="Open menu">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <line x1="4" y1="6" x2="20" y2="6" />
-                    <line x1="4" y1="12" x2="20" y2="12" />
-                    <line x1="4" y1="18" x2="20" y2="18" />
-                </svg>
-            </label>
-            <ul class="menu-burger__item-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="details.html" aria-current="page">Details</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="new-animal-form.html">Add New</a></li>
-            </ul>
-        </div>
-        <h1 class="brandTitle">Axolotl Gallery</h1>
-        <nav class="navBoxTwo" aria-label="Primary">
-            <a href="index.html">Home</a>
-            <a href="details.html" aria-current="page">Details</a>
-            <a href="about.html">About</a>
-            <a href="new-animal-form.html">Add New</a>
-        </nav>
+      <div class="menu-burger">
+        <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
+        <label for="nav-toggle" aria-label="Open menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </label>
+        <ul class="menu-burger__item-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="new-animal-form.html">Add New</a></li>
+        </ul>
+      </div>
+
+      <h1 class="brandTitle">Axolotl World</h1>
+
+      <nav class="navBoxTwo" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="details.html">Details</a>
+        <a href="about.html">About</a>
+        <a href="new-animal-form.html">Add New</a>
+      </nav>
     </header>
 
-    <nav class="crumbs" aria-label="Breadcrumb">
-        <div class="track">
-            <a href="index.html">Home</a><span class="sep">/</span>
-            <a href="details.html">Details</a><span class="sep">/</span>
-            <span id="crumbMorph">Morph</span>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="inner">
-            <h1 id="morphTitle">Morph Details</h1>
-            <p class="lede" id="morphIntro">Loading morph information…</p>
-        </div>
-    </section>
-
     <main class="wrapper page">
-        <section class="panel">
+      <h1>Axolotl Morphs</h1>
+      <p class="lede">
+        Scientific-but-fun reference for <em>Ambystoma mexicanum</em>: common
+        color morphs and basic husbandry. Use the search to filter.
+      </p>
+
+      <div class="toolbar">
+        <input
+          id="search"
+          class="input"
+          type="search"
+          placeholder="Search morphs (e.g., leucistic, wild, melanoid, golden, gfp, firefly)"
+        />
+        <button class="button" onclick="filterCards()">Search</button>
+      </div>
+
+      <section id="cards" class="grid" aria-label="Morph gallery">
+        <a
+          class="card"
+          href="details.html?morph=Leucistic"
+          data-name="Leucistic"
+          data-tags="pale white pink gills dark eyes beginner"
+        >
+          <figure>
             <img
-                id="morphImage"
-                src="assets/img/wild.jpg"
-                alt="Axolotl morph image"
+              src="assets/img/leucistic.jpg"
+              alt="Leucistic axolotl on pale substrate"
             />
-            <div class="pad">
-                <h2>How this morph arises</h2>
-                <p id="morphOrigin">—</p>
+          </figure>
+          <div class="cap">
+            <h3>Leucistic</h3>
+            <p class="meta">Pale body, dark eyes; pink gills common.</p>
+          </div>
+        </a>
 
-                <h2 style="margin-top: 1.4rem">Typical size</h2>
-                <ul class="list" id="morphSize">
-                    <li>—</li>
-                </ul>
+        <a
+          class="card"
+          href="details.html?morph=Wild type"
+          data-name="Wild type"
+          data-tags="wild green brown speckled natural hardy classic"
+        >
+          <figure>
+            <img
+              src="assets/img/wild.jpg"
+              alt="Wild type axolotl with speckled olive coloration"
+            />
+          </figure>
+          <div class="cap">
+            <h3>Wild type</h3>
+            <p class="meta">Speckled olive/brown—the natural look.</p>
+          </div>
+        </a>
 
-                <h2 style="margin-top: 1.4rem">
-                    Phenotype & what makes it unique
-                </h2>
-                <ul class="list" id="morphTraits">
-                    <li>—</li>
-                </ul>
+        <a
+          class="card"
+          href="details.html?morph=Melanoid"
+          data-name="Melanoid"
+          data-tags="melanoid dark matte uniform reduced iridophores"
+        >
+          <figure>
+            <img
+              src="assets/img/melanoid.jpg"
+              alt="Melanoid axolotl with uniform dark coloration"
+            />
+          </figure>
+          <div class="cap">
+            <h3>Melanoid</h3>
+            <p class="meta">Deep even coloration; matte finish.</p>
+          </div>
+        </a>
 
-                <h2 style="margin-top: 1.4rem">Care notes</h2>
-                <ul class="list" id="morphCare">
-                    <li>—</li>
-                </ul>
-            </div>
-        </section>
+        <a
+          class="card"
+          href="details.html?morph=Golden%20Albino"
+          data-name="Golden Albino"
+          data-tags="golden albino light eyes gold shimmering"
+        >
+          <figure>
+            <img
+              src="assets/img/goldenalbino.jpg"
+              alt="Golden albino axolotl with warm gold tone"
+            />
+          </figure>
+          <div class="cap">
+            <h3>Golden Albino</h3>
+            <p class="meta">Warm gold tone; lacks dark pigment.</p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="details.html?morph=Albino%20White"
+          data-name="Albino White"
+          data-tags="albino white light eyes bright gills sensitive light"
+        >
+          <figure>
+            <img
+              src="assets/img/albinowhite.jpg"
+              alt="White albino axolotl with light eyes"
+            />
+          </figure>
+          <div class="cap">
+            <h3>Albino White</h3>
+            <p class="meta">White body, light eyes; light-sensitive.</p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="details.html?morph=GFP"
+          data-name="GFP"
+          data-tags="gfp green fluorescent protein uv glow"
+        >
+          <figure>
+            <img
+              src="assets/img/gfp.jpg"
+              alt="GFP axolotl glowing under UV light"
+            />
+          </figure>
+          <div class="cap">
+            <h3>GFP</h3>
+            <p class="meta">Glows under UV (fluorescent protein).</p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="details.html?morph=Firefly"
+          data-name="Firefly"
+          data-tags="firefly chimera gfp tail unique rare"
+        >
+          <figure>
+            <img
+              src="assets/img/firefly.jpg"
+              alt="Rare firefly axolotl showing GFP in tail"
+            />
+          </figure>
+          <div class="cap">
+            <h3>Firefly</h3>
+            <p class="meta">Rare; GFP often concentrated in tail.</p>
+          </div>
+        </a>
+      </section>
+
+      <!-- Quick facts with baby.jpg -->
+      <section class="panel" style="margin-top: 2rem">
+        <img src="assets/img/baby.jpg" alt="Baby axolotl close-up" />
+        <div class="pad">
+          <h2>Quick facts</h2>
+          <ul class="list">
+            <li>Species: <strong>Ambystoma mexicanum</strong></li>
+            <li>Remarkable tissue & limb regeneration</li>
+            <li>Native to Xochimilco (Mexico City)</li>
+            <li>Preferred water: ~16–18°C (60–64°F), gentle flow</li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="wrapper">© Axolotl World</div>
+      <div class="wrapper">© Axolotl World</div>
     </footer>
 
     <script>
-        const MORPHS = {
-            Leucistic: {
-                img: "assets/img/leucistic.jpg",
-                intro:
-                    "Reduced melanophore distribution in the skin called leucism yields a pale body while ocular melanin is retained. Dark eyes and often pink external gills. Not true albino.",
-                origin:
-                    "Leucism reduces pigment cells in the skin while leaving eye pigmentation.",
-                size: [
-                    "Adult length: typically 23–30 cm (9–12 in)",
-                    "Occasional larger individuals up to ~30+ cm",
-                ],
-                traits: [
-                    "Pale body with dark eyes",
-                    "Pink external gills common",
-                    "Visible capillaries in thin skin",
-                ],
-                care: ["Cool, clean water; gentle flow", "Fine sand or bare bottom"],
-            },
-            "Wild Type": {
-                img: "assets/img/wild.jpg",
-                intro:
-                    "A mosaic of melanophores xanthophores and iridophores produces cryptic olive to brown speckling with metallic flecks from guanine platelets. This approximates natural lake coloration.",
-                origin:
-                    "Wild mix of melanophores, xanthophores, and iridophores.",
-                size: ["Adult length: typically 23–30 cm (9–12 in)"],
-                traits: [
-                    "Olive to brown with speckling",
-                    "Gold flecks may be visible",
-                    "Dark eyes",
-                ],
-                care: [
-                    "Provide hides & low light",
-                    "Standard water quality",
-                    "Protein-rich diet",
-                ],
-            },
-            Melanoid: {
-                img: "assets/img/melanoid.jpg",
-                intro:
-                    "A recessive melanoid genotype diminishes iridophores and apparent xanthophore reflectance. The result is uniform matte dark pigmentation with minimal gold flecking. Eyes remain dark.",
-                origin:
-                    "Melanoid gene reduces iridophores for a uniform, dark appearance.",
-                size: ["Adult length: typically 23–30 cm (9–12 in)"],
-                traits: [
-                    "Uniform, very dark body",
-                    "Matte finish",
-                    "Few to no metallic flecks",
-                ],
-                care: [
-                    "Standard parameters",
-                    "Low to moderate light",
-                    "Good water quality & hides",
-                ],
-            },
-            "Golden Albino": {
-                img: "assets/img/goldenalbino.jpg",
-                intro:
-                    "Amelanism removes melanin while xanthophores and some iridophores remain. The integument appears yellow to gold and the eyes are light. Individuals are often more photosensitive than pigmented morphs.",
-                origin:
-                    "Albino genetics reduce melanin; xanthophores give golden hue.",
-                size: ["Adult length: typically 23–30 cm (9–12 in)"],
-                traits: [
-                    "Golden/yellow body",
-                    "Light eyes",
-                    "Subtle iridescence possible",
-                ],
-                care: [
-                    "Prefer dim light",
-                    "Standard temperature & quality",
-                    "Fine sand or bare bottom",
-                ],
-            },
-            "Albino White": {
-                img: "assets/img/albinowhite.jpg",
-                intro:
-                    "Amelanism with low xanthophore density produces a near white body and pale or pink eyes. Light sensitivity is high and speckling or metallic sheen is minimal.",
-                origin: "Albino genetics remove dark melanin.",
-                size: ["Adult length: typically 23–30 cm (9–12 in)"],
-                traits: ["White body", "Very light eyes", "Pinkish gills"],
-                care: [
-                    "Avoid strong lighting",
-                    "Standard conditions",
-                    "Shaded hides",
-                ],
-            },
-            GFP: {
-                img: "assets/img/gfp.jpg",
-                intro:
-                    "Transgenic expression of Aequorea victoria green fluorescent protein causes tissues to fluoresce bright green under blue or UV excitation. Baseline color depends on the underlying morph.",
-                origin:
-                    "Transgenic line expressing green fluorescent protein.",
-                size: ["Adult length: typically 23–30 cm (9–12 in)"],
-                traits: [
-                    "Daylight look depends on base morph",
-                    "Green glow under UV/blue",
-                    "Can combine with other morphs",
-                ],
-                care: [
-                    "Standard care",
-                    "Avoid long bright UV exposure",
-                    "Provide hides & low light",
-                ],
-            },
-            Firefly: {
-                img: "assets/img/firefly.jpg",
-                intro:
-                    "Chimeric or tissue graft lineage concentrates GFP in the tail or a body segment. This creates sharply regional fluorescence and a striking mosaic pattern. This morph is rare and visually distinctive.",
-                origin:
-                    "Specialized techniques yield striking tail fluorescence/chimera-like split.",
-                size: ["Adult length: typically 23–30 cm (9–12 in)"],
-                traits: [
-                    "High-contrast look",
-                    "Asymmetric/split possible",
-                    "Rare and distinctive",
-                ],
-                care: [
-                    "Same as other morphs",
-                    "Avoid excessive UV/blue light",
-                    "Standard clean, cool water",
-                ],
-            },
-        };
-
-        const params = new URLSearchParams(location.search);
-        const key = params.get("morph") || "Wild Type";
-        const data = MORPHS[key] || MORPHS["Wild Type"];
-
-        document.getElementById("crumbMorph").textContent = key;
-        document.getElementById("morphTitle").textContent = key;
-        document.getElementById("morphIntro").textContent = data.intro;
-
-        const img = document.getElementById("morphImage");
-        img.src = data.img;
-        img.alt = `${key} axolotl`;
-
-        const fillList = (id, arr) => {
-            const ul = document.getElementById(id);
-            ul.innerHTML = arr.map((item) => `<li>${item}</li>`).join("");
-        };
-
-        document.getElementById("morphOrigin").textContent = data.origin;
-        fillList("morphSize", data.size);
-        fillList("morphTraits", data.traits);
-        fillList("morphCare", data.care);
+      function filterCards() {
+        const q = document.getElementById("search").value.trim().toLowerCase();
+        document.querySelectorAll("#cards .card").forEach((card) => {
+          const name = (card.getAttribute("data-name") || "").toLowerCase();
+          const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+          card.style.display = (name + " " + tags).includes(q) ? "" : "none";
+        });
+      }
+      document.getElementById("search").addEventListener("input", filterCards);
     </script>
-</body>
+  </body>
 </html>
