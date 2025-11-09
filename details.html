@@ -7,10 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -23,7 +20,7 @@
                stroke-width="2" stroke="currentColor" fill="none"
                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" />
-            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="6"  x2="20" y2="6" />
             <line x1="4" y1="12" x2="20" y2="12" />
             <line x1="4" y1="18" x2="20" y2="18" />
           </svg>
@@ -46,25 +43,11 @@
       </nav>
     </header>
 
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <div class="track">
-        <a href="index.html">Home</a>
-        <span class="sep">/</span>
-        <a href="details.html">Details</a>
-        <span class="sep">/</span>
-        <span id="crumbMorph">Morph</span>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <div class="inner">
-        <h1 id="morphTitle">Morph Details</h1>
-        <p class="lede" id="morphIntro">Loading morph information…</p>
-      </div>
-    </section>
-
     <main class="wrapper page">
-      <section class="panel">
+      <h1 id="morphTitle">Morph Details</h1>
+      <p class="lede" id="morphIntro">Loading morph information…</p>
+
+      <section class="panel" style="margin-top: 2.4rem">
         <img id="morphImage" src="assets/img/wild.jpg" alt="Axolotl morph image" />
         <div class="pad">
           <h2>How this morph arises</h2>
@@ -90,86 +73,77 @@
       const MORPHS = {
         Leucistic: {
           img: "assets/img/leucistic.jpg",
-          intro:
-            "Reduced melanophore distribution (leucism) yields a pale body while ocular melanin is retained. Dark eyes and often pink external gills. Not true albino.",
-          origin:
-            "Leucism reduces pigment cells in the skin while leaving eye pigmentation.",
-          size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["Pale body with dark eyes", "Pink external gills", "Fine skin with visible capillaries"],
-          care: ["Cool, clean water; gentle flow", "Fine sand or bare bottom"],
+          intro: "Leucistic axolotls are pale with dark eyes and often pink gills.",
+          origin: "Leucism reduces pigment cells in the skin while leaving eye pigmentation.",
+          size: ["Adult length: typically 23–30 cm (9–12 in)","Occasional larger individuals up to ~30+ cm"],
+          traits: ["Pale body with dark eyes","Pink external gills common","Visible capillaries in thin skin"],
+          care: ["Cool, clean water; gentle flow","Avoid strong light","Fine sand or bare bottom"],
         },
-        "Wild Type": {
+        "Wild type": {
           img: "assets/img/wild.jpg",
-          intro:
-            "Melanophores, xanthophores, and iridophores produce cryptic olive to brown speckling with metallic flecks from guanine platelets — close to natural coloration.",
+          intro: "Wild type axolotls show the speckled olive/brown look closest to natural coloration.",
           origin: "Wild mix of melanophores, xanthophores, and iridophores.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["Olive to brown with speckling", "Gold flecks may be visible", "Dark eyes"],
-          care: ["Provide hides & low light", "Standard water quality", "Protein-rich diet"],
+          traits: ["Olive to brown with speckling","Gold flecks may be visible","Dark eyes"],
+          care: ["Provide hides & low light","Standard water quality","Protein-rich diet"],
         },
         Melanoid: {
           img: "assets/img/melanoid.jpg",
-          intro:
-            "A recessive melanoid genotype diminishes iridophores and apparent xanthophore reflectance. The result is uniform matte dark pigmentation.",
+          intro: "Melanoids have deep, even coloration with a matte look.",
           origin: "Melanoid gene reduces iridophores for a uniform, dark appearance.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["Uniform dark body", "Matte finish", "Few or no metallic flecks"],
-          care: ["Standard parameters", "Low to moderate light", "Good water quality & hides"],
+          traits: ["Uniform, very dark body","Matte finish","Few to no metallic flecks"],
+          care: ["Standard parameters","Low to moderate light","Good water quality & hides"],
         },
         "Golden Albino": {
           img: "assets/img/goldenalbino.jpg",
-          intro:
-            "Amelanism removes melanin while xanthophores and some iridophores remain, giving yellow to golden integument; eyes are light and individuals are often more photosensitive.",
-          origin: "Albino genetics reduce melanin; xanthophores give the golden hue.",
+          intro: "Golden albinos have a warm gold/yellow tone with light eyes.",
+          origin: "Albino genetics reduce melanin; xanthophores give golden hue.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["Golden/yellow body", "Light eyes", "Subtle iridescence possible"],
-          care: ["Prefer dim light", "Standard temperature & quality", "Fine sand or bare bottom"],
+          traits: ["Golden/yellow body","Light eyes","Subtle iridescence possible"],
+          care: ["Prefer dim light","Standard temperature & quality","Fine sand or bare bottom"],
         },
         "Albino White": {
           img: "assets/img/albinowhite.jpg",
-          intro:
-            "Amelanism with low xanthophore density produces a near-white body and pale or pink eyes. Light sensitivity is high; speckling is minimal.",
-          origin: "Albino genetics remove melanin.",
+          intro: "White albinos are bright white with pale eyes.",
+          origin: "Albino genetics remove dark melanin.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["White body", "Very light eyes", "Pinkish gills"],
-          care: ["Avoid strong lighting", "Standard conditions", "Shaded hides"],
+          traits: ["White body","Very light eyes","Pinkish gills"],
+          care: ["Avoid strong lighting","Standard conditions","Shaded hides"],
         },
         GFP: {
           img: "assets/img/gfp.jpg",
-          intro:
-            "Transgenic expression of Aequorea victoria green fluorescent protein causes tissues to fluoresce bright green under blue/UV light. Baseline color depends on the underlying morph.",
-          origin: "Transgenic line expressing GFP.",
+          intro: "GFP axolotls fluoresce green under UV/blue light.",
+          origin: "Transgenic line expressing green fluorescent protein.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["Daylight look depends on base morph", "Green glow under UV/blue", "Can combine with other morphs"],
-          care: ["Standard care", "Avoid prolonged bright UV exposure", "Provide hides & low light"],
+          traits: ["Daylight look depends on base morph","Green glow under UV/blue","Can combine with other morphs"],
+          care: ["Standard care","Avoid long bright UV exposure","Provide hides & low light"],
         },
         Firefly: {
           img: "assets/img/firefly.jpg",
-          intro:
-            "Chimeric or graft lineage concentrates GFP in the tail or a body region, creating sharply regional fluorescence and a striking mosaic pattern.",
-          origin: "Specialized methods yield regional fluorescence/chimera-like split.",
+          intro: "Firefly often shows GFP concentrated in the tail or split patterns.",
+          origin: "Specialized techniques yield striking tail fluorescence/chimera-like split.",
           size: ["Adult length: typically 23–30 cm (9–12 in)"],
-          traits: ["High-contrast look", "Asymmetric/split possible", "Rare and distinctive"],
-          care: ["Same as other morphs", "Avoid excessive UV/blue light", "Clean, cool water"],
+          traits: ["High-contrast look","Asymmetric/split possible","Rare and distinctive"],
+          care: ["Same as other morphs","Avoid excessive UV/blue light","Standard clean, cool water"],
         },
       };
 
       const params = new URLSearchParams(location.search);
-      const key = params.get("morph") || "Wild Type";
-      const data = MORPHS[key] || MORPHS["Wild Type"];
+      const key = params.get("morph") || "Wild type";
+      const data = MORPHS[key] || MORPHS["Wild type"];
 
-      document.getElementById("crumbMorph").textContent = key;
-      document.getElementById("morphTitle").textContent = key;
+      document.getElementById("morphTitle").textContent = `${key}`;
       document.getElementById("morphIntro").textContent = data.intro;
 
       const img = document.getElementById("morphImage");
-      img.src = data.img;
-      img.alt = `${key} axolotl`;
+      img.src = data.img; img.alt = `${key} axolotl`;
 
       const fillList = (id, arr) => {
         const ul = document.getElementById(id);
         ul.innerHTML = arr.map((item) => `<li>${item}</li>`).join("");
       };
+
       document.getElementById("morphOrigin").textContent = data.origin;
       fillList("morphSize", data.size);
       fillList("morphTraits", data.traits);
