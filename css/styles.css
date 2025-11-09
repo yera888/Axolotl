@@ -136,7 +136,7 @@ a:hover{ text-decoration: underline; }
   background: var(--surface); color: var(--ink);
   box-shadow: 0 1px 2px rgba(0,0,0,.04);
 }
-.input::placeholder{ color:#94a3b8; }
+.input::placeholder{ color:#648dc6; }
 .input:focus{
   border-color: var(--ink);
   outline: none;
