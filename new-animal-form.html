@@ -19,16 +19,9 @@
       <div class="menu-burger">
         <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation" />
         <label for="nav-toggle" aria-label="Open menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               stroke-width="2" stroke="currentColor" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" />
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="12" x2="20" y2="12" />
@@ -39,9 +32,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="details.html">Details</a></li>
           <li><a href="about.html">About</a></li>
-          <li>
-            <a href="new-animal-form.html" aria-current="page">Add New</a>
-          </li>
+          <li><a href="new-animal-form.html" aria-current="page">Add New</a></li>
         </ul>
       </div>
 
@@ -66,73 +57,41 @@
     <section class="hero">
       <div class="inner">
         <h1>Add a new animal</h1>
-        <p></p>
+        <p class="lede">Static demo — wire up your API later.</p>
       </div>
     </section>
 
     <main class="wrapper page">
-      <form
-        class="form"
-        onsubmit="event.preventDefault(); alert('Static demo — connect to your API later.');"
-      >
+      <form class="form"
+            onsubmit="event.preventDefault(); alert('Static demo — connect to your API later.');">
         <div class="field">
           <label for="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            class="input"
-            type="text"
-            placeholder="e.g., Leucistic"
-            required
-          />
+          <input id="name" name="name" class="input" type="text"
+                 placeholder="e.g., Leucistic" required />
         </div>
 
         <div class="field">
           <label for="morph">Morph</label>
-          <input
-            id="morph"
-            name="morph"
-            class="input"
-            type="text"
-            placeholder="leucistic, wild type, melanoid..."
-            required
-          />
+          <input id="morph" name="morph" class="input" type="text"
+                 placeholder="leucistic, wild type, melanoid…" required />
         </div>
 
         <div class="field">
-          <label for="age">Age </label>
-          <input
-            id="age"
-            name="age"
-            class="input"
-            type="number"
-            min="0"
-            step="0.1"
-            placeholder="1.5"
-          />
+          <label for="age">Age</label>
+          <input id="age" name="age" class="input" type="number"
+                 min="0" step="0.1" placeholder="1.5" />
         </div>
 
         <div class="field">
           <label for="summary">Summary</label>
-          <textarea
-            id="summary"
-            name="summary"
-            class="input"
-            placeholder="Details, description notes, etc."
-            required
-          ></textarea>
+          <textarea id="summary" name="summary" class="input"
+                    placeholder="Details, description notes, etc." required></textarea>
         </div>
 
         <div class="field">
           <label for="image">Image filename</label>
-          <input
-            id="image"
-            name="image"
-            class="input"
-            type="text"
-            placeholder="leucistic.jpg"
-            required
-          />
+          <input id="image" name="image" class="input" type="text"
+                 placeholder="leucistic.jpg" required />
         </div>
 
         <button class="btn" type="submit">Submit</button>
