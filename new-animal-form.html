@@ -7,10 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -23,7 +20,7 @@
                stroke-width="2" stroke="currentColor" fill="none"
                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" />
-            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="6"  x2="20" y2="6" />
             <line x1="4" y1="12" x2="20" y2="12" />
             <line x1="4" y1="18" x2="20" y2="18" />
           </svg>
@@ -46,24 +43,12 @@
       </nav>
     </header>
 
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <div class="track">
-        <a href="index.html">Home</a>
-        <span class="sep">/</span>
-        <span>Add new</span>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <div class="inner">
-        <h1>Add a new animal</h1>
-        <p class="lede">Static demo — wire up your API later.</p>
-      </div>
-    </section>
-
     <main class="wrapper page">
+      <h1>Add a new animal</h1>
+      <p class="lede">Static demo form. You can wire this to an API later.</p>
+
       <form class="form"
-            onsubmit="event.preventDefault(); alert('Static demo — connect to your API later.');">
+        onsubmit="event.preventDefault(); alert('Static demo — connect to your API later.');">
         <div class="field">
           <label for="name">Name</label>
           <input id="name" name="name" class="input" type="text"
@@ -71,21 +56,27 @@
         </div>
 
         <div class="field">
-          <label for="morph">Morph</label>
-          <input id="morph" name="morph" class="input" type="text"
-                 placeholder="leucistic, wild type, melanoid…" required />
+          <label for="species">Species</label>
+          <input id="species" name="species" class="input" type="text"
+                 placeholder="Ambystoma mexicanum" required />
         </div>
 
         <div class="field">
-          <label for="age">Age</label>
-          <input id="age" name="age" class="input" type="number"
-                 min="0" step="0.1" placeholder="1.5" />
+          <label for="morph">Morph / Category</label>
+          <input id="morph" name="morph" class="input" type="text"
+                 placeholder="leucistic, wild type, melanoid..." required />
+        </div>
+
+        <div class="field">
+          <label for="age">Age (years)</label>
+          <input id="age" name="age" class="input" type="number" min="0" step="0.1"
+                 placeholder="1.5" />
         </div>
 
         <div class="field">
           <label for="summary">Summary</label>
           <textarea id="summary" name="summary" class="input"
-                    placeholder="Details, description notes, etc." required></textarea>
+                    placeholder="Short card summary." required></textarea>
         </div>
 
         <div class="field">
@@ -99,7 +90,7 @@
     </main>
 
     <footer>
-      <div class="wrapper"></div>
+      <div class="wrapper">© Axolotl World</div>
     </footer>
   </body>
 </html>
