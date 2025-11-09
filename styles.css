@@ -2,13 +2,13 @@ html { font-size: 62.5%; }
 * { box-sizing: border-box; }
 
 :root{
-  --bg: #f5f7f9;           
-  --surface: #ffffff;      
-  --ink: #1c2430;          
-  --ink-soft: #dae5f6;      
-  --accent: #ffffff;        
-  --accent-700: #ffffff;   
-  --line: #f1f3f6;         
+  --bg: #f5f7f9;
+  --surface: #ffffff;
+  --ink: #1c2430;
+  --ink-soft: #6b7a90;
+  --accent: #ffffff;
+  --accent-700: #ffffff;
+  --line: #f1f3f6;
   --shadow: 0 6px 20px rgba(0,0,0,.06);
 }
 
@@ -27,6 +27,7 @@ img{ max-width: 100%; height: auto; display: block; }
 
 a{ color: var(--ink); text-decoration: none; }
 a:hover{ text-decoration: underline; }
+
 .navContainer{
   position: sticky; top: 0; z-index: 1000;
   height: 7.2rem;
@@ -65,6 +66,7 @@ a:hover{ text-decoration: underline; }
   border: 1px solid var(--line);
 }
 
+/* Burger menu */
 .menu-burger{ position: relative; width: 3.6rem; height: 3.6rem; display: none; }
 .menu-burger > * { position: absolute; inset:0; }
 .menu-burger input{ opacity:0; margin:0; width:100%; height:100%; z-index:2; cursor:pointer; }
@@ -92,6 +94,7 @@ a:hover{ text-decoration: underline; }
   background:#fff; color: var(--ink); border: 1px solid var(--line);
 }
 
+/* Breadcrumbs */
 .crumbs{
   background: var(--bg);
   border-bottom: 1px solid var(--line);
@@ -104,13 +107,12 @@ a:hover{ text-decoration: underline; }
 .crumbs a{ color: var(--ink-soft); }
 .crumbs .sep{ padding: 0 .6rem; opacity: .65; }
 
+/* Hero */
 .hero{
-  background: linear-gradient(180deg, rgba(255,255,255,.0), rgba(255,255,255,0));
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0));
   border-bottom: 1px solid var(--line);
 }
-.hero--image{
-  background-size: cover; background-position: center;
-}
+.hero--image{ background-size: cover; background-position: center; }
 .hero .inner{
   max-width: 118rem; margin: 0 auto; padding: 3.2rem 1.8rem;
   display: grid; gap: .8rem;
@@ -121,14 +123,16 @@ a:hover{ text-decoration: underline; }
   font-weight: 800;
   font-size: clamp(3.0rem, 4vw, 4.2rem);
   line-height: 1.15;
-  color: #0e2a30; 
+  color: #0e2a30;
 }
 .hero p{ margin:0; color: var(--ink-soft); font-size: 1.8rem; }
 .hero--image h1, .hero--image p{ color:#ffffff; text-shadow: 0 2px 10px rgba(0,0,0,.25); }
 
+/* Layout */
 .page{ padding: 2.8rem 0; }
 .lede{ margin: 0 0 2.0rem; color: var(--ink-soft); max-width: 75ch; font-size: 1.8rem; }
 
+/* Inputs & buttons */
 .toolbar{ display:flex; gap: .8rem; margin: 1.6rem 0 2.0rem; }
 .input{
   width:100%; padding: 1.2rem 1.3rem;
@@ -152,6 +156,7 @@ a:hover{ text-decoration: underline; }
   background: #fafafa; border-color: #202733;
 }
 
+/* Cards grid */
 .grid{
   display:grid; gap: 2.4rem;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
@@ -173,6 +178,7 @@ a:hover{ text-decoration: underline; }
 }
 .meta{ margin:0; color: var(--ink-soft); font-size: 1.4rem; }
 
+/* Panel band */
 .panel{
   background: var(--surface);
   border: 1px solid var(--line);
@@ -189,16 +195,19 @@ a:hover{ text-decoration: underline; }
 }
 .list{ margin:.6rem 0 0; padding-left: 1.6rem; color: var(--ink-soft); }
 
+/* Form */
 .form{ max-width: 76rem; display:grid; gap: 1.2rem; }
 .field{ display:grid; gap: .6rem; }
 label{ color: var(--ink); font-weight: 700; }
 textarea{ min-height: 12rem; resize: vertical; }
 
+/* Footer */
 footer{
   margin-top: 3.2rem; background: var(--surface); border-top: 1px solid var(--line);
   color: var(--ink-soft); font-size: 1.4rem; text-align:center; padding: 2.0rem 0;
 }
 
+/* Responsive */
 @media (max-width: 86rem){
   .menu-burger{ display:block; }
   .navBoxTwo{ display:none; }
